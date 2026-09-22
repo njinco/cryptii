@@ -1,10 +1,12 @@
+@use '../globals' as *;
+@use '../shared' as shared;
 
 $header-height: 96px !default;
 
 .header {
   position: relative;
   z-index: $z-index-header;
-  @extend .container;
+  @include shared.container;
 
   @include breakpoint(xs) {
     padding: 24px 0;
@@ -26,15 +28,11 @@ $header-height: 96px !default;
   }
 
   &__item {
-    padding: 8px 0;
-
-    @include breakpoint(s, l) {
-      padding: 0 8px;
-    }
+    @include shared.header-item;
   }
 
   &__featured {
-    @extend .header__item;
+    @include shared.header-item;
 
     @include breakpoint(xs) {
       margin-bottom: -24px;

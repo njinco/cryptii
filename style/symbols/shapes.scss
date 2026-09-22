@@ -1,4 +1,7 @@
 
+@use '../variables/variables' as *;
+@use '../variables/colors' as *;
+
 %s-sheet {
   box-shadow: 0 1px 3px 0 rgba($c-black, 0.14);
   border-radius: $default-border-radius;

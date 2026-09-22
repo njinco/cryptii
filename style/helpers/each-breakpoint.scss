@@ -1,16 +1,19 @@
 
 @use 'sass:map';
+@use 'sass:meta';
+@use '../variables/breakpoints' as *;
+@use 'breakpoint' as *;
 
 @mixin each-breakpoint($key: null) {
   @each $_name, $_breakpoint in $breakpoints {
     // Cache global vars to restore them later
-    @if variable-exists(name) {
+    @if meta.variable-exists(name) {
       $_old-name: $name;
     }
-    @if variable-exists(breakpoint) {
+    @if meta.variable-exists(breakpoint) {
       $_old-breakpoint: $breakpoint;
     }
-    @if variable-exists(value) {
+    @if meta.variable-exists(value) {
       $_old-value: $value;
     }
 
@@ -31,13 +34,13 @@
     }
 
     // Restore global vars
-    @if variable-exists(_old-name) {
+    @if meta.variable-exists(_old-name) {
       $name: $_old-name !global;
     }
-    @if variable-exists(_old-breakpoint) {
+    @if meta.variable-exists(_old-breakpoint) {
       $breakpoint: $_old-breakpoint !global;
     }
-    @if variable-exists(_old-value) {
+    @if meta.variable-exists(_old-value) {
       $value: $_old-value !global;
     }
   }

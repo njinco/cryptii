@@ -2,6 +2,13 @@ import { defineConfig } from 'vite'
 
 export default defineConfig({
   base: '',
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: 'modern'
+      }
+    }
+  },
   build: {
     outDir: 'dist',
     manifest: 'manifest.json'

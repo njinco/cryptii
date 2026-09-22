@@ -1,54 +1,43 @@
 
-// Global variables, config switches
-@import 'variables/variables';
-@import 'variables/breakpoints';
-@import 'variables/colors';
-
-// Helpers
-@import 'helpers/breakpoint';
-@import 'helpers/each-breakpoint';
-
-// Symbols
-@import 'symbols/typography';
-@import 'symbols/shapes';
+@use 'globals' as *;
 
 // Ground-zero styles
-@import 'normalize-scss/sass/normalize/import-now';
+@use 'normalize';
 
 // Unclassed HTML elements
-@import 'font';
-@import 'generic';
+@use 'font';
+@use 'generic';
 
 // Views
-@import 'views/container';
-@import 'views/link-list';
+@use 'views/container';
+@use 'views/link-list';
 
 // App views
-@import 'views/app';
-@import 'views/header';
-@import 'views/modal';
-@import 'views/menu';
-@import 'views/featured';
-@import 'views/page';
-@import 'views/content';
-@import 'views/footer';
-@import 'views/pipe';
+@use 'views/app';
+@use 'views/header';
+@use 'views/modal';
+@use 'views/menu';
+@use 'views/featured';
+@use 'views/page';
+@use 'views/content';
+@use 'views/footer';
+@use 'views/pipe';
 
 // Modal views
-@import 'views/modal/library';
+@use 'views/modal/library';
 
 // Brick views
-@import 'views/form';
-@import 'views/brick';
-@import 'views/viewer';
-@import 'views/encoder';
-@import 'views/viewer/text';
-@import 'views/viewer/punched-tape';
+@use 'views/form';
+@use 'views/brick';
+@use 'views/viewer';
+@use 'views/encoder';
+@use 'views/viewer/text' as viewer-text;
+@use 'views/viewer/punched-tape';
 
 // Field views
-@import 'views/field';
-@import 'views/field/boolean';
-@import 'views/field/enum';
-@import 'views/field/number';
-@import 'views/field/text';
-@import 'views/field/byte';
+@use 'views/field';
+@use 'views/field/boolean';
+@use 'views/field/enum';
+@use 'views/field/number';
+@use 'views/field/text' as field-text;
+@use 'views/field/byte';

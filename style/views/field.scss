@@ -1,3 +1,5 @@
+@use '../globals' as *;
+@use '../shared' as shared;
 
 @use 'sass:math';
 
@@ -24,10 +26,7 @@
   }
 
   &__field {
-    position: relative;
-    margin: $field-field-padding-v $field-padding-h;
-    min-height: $field-field-height - $field-field-padding-v * 2;
-    user-select: auto;
+    @include shared.field-field;
   }
 
   &__message {
