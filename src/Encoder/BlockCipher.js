@@ -59,6 +59,15 @@ const modes = [
     hasIV: true,
     browserMode: true,
     nodeMode: true
+  },
+  {
+    name: 'gcm',
+    label: 'GCM (Galois/Counter Mode)',
+    hasIV: true,
+    ivSize: 12,
+    browserMode: true,
+    nodeMode: true,
+    authenticated: true
   }
 ]
 
@@ -158,8 +167,10 @@ export default class BlockCipherEncoder extends Encoder {
 
         this.getSetting('iv')
           .setVisible(hasIV)
-          .setMinSize(blockSize)
-          .setMaxSize(blockSize)
+          .setMinSize(BlockCipherEncoder.getModeIVSize(value, blockSize))
+          .setMaxSize(BlockCipherEncoder.getModeIVSize(value, blockSize))
+        this.getSetting('padding').setVisible(
+          BlockCipherEncoder.isPaddingAvailable() && value !== 'gcm')
         break
       }
     }
@@ -207,6 +218,9 @@ export default class BlockCipherEncoder extends Encoder {
       iv = new Uint8Array([])
     }
 
+    const modeData = BlockCipherEncoder.getMode(mode)
+    const authenticated = modeData.authenticated === true
+
     if (EnvUtil.isNode()) {
       const cipherName = algorithm.nodeAlgorithm + '-' + mode
 
@@ -214,18 +228,41 @@ export default class BlockCipherEncoder extends Encoder {
       iv = global.Buffer.from(iv)
       message = global.Buffer.from(message)
 
+      // AES-GCM appends its authentication tag to the ciphertext so the
+      // browser and Node implementations use the same serialized format.
+      let authTag = null
+      if (authenticated && !isEncode) {
+        if (message.length < 16) {
+          throw new Error('AES-GCM ciphertext is missing its authentication tag')
+        }
+        authTag = message.subarray(message.length - 16)
+        message = message.subarray(0, message.length - 16)
+      }
+
       // Create message cipher using Node Crypto async
       return new Promise((resolve, reject) => {
         const cipher = isEncode
           ? nodeCrypto.createCipheriv(cipherName, key, iv)
           : nodeCrypto.createDecipheriv(cipherName, key, iv)
 
-        cipher.setAutoPadding(padding)
+        if (authenticated) {
+          if (!isEncode) {
+            cipher.setAuthTag(authTag)
+          }
+        } else {
+          cipher.setAutoPadding(padding)
+        }
 
-        const resultBuffer = Buffer.concat([
+        const resultParts = [
           cipher.update(message),
           cipher.final()
-        ])
+        ]
+
+        if (authenticated && isEncode) {
+          resultParts.push(cipher.getAuthTag())
+        }
+
+        const resultBuffer = Buffer.concat(resultParts)
 
         resolve(new Uint8Array(resultBuffer))
       })
@@ -241,12 +278,9 @@ export default class BlockCipherEncoder extends Encoder {
         'raw', key, { name: cipherName }, false, ['encrypt', 'decrypt'])
 
       // Create message cipher using Web Crypto API
-      const algo = {
-        name: cipherName,
-        iv,
-        counter: iv,
-        length: algorithm.blockSize
-      }
+      const algo = mode === 'gcm'
+        ? { name: cipherName, iv, tagLength: 128 }
+        : { name: cipherName, iv, counter: iv, length: algorithm.blockSize }
 
       let result = isEncode
         ? cryptoSubtle.encrypt(algo, cryptoKey, message)
@@ -305,6 +339,18 @@ export default class BlockCipherEncoder extends Encoder {
    */
   static getMode (name) {
     return modes.find(mode => mode.name === name)
+  }
+
+  /**
+   * Returns the IV size required by a mode.
+   * @protected
+   * @param {string} name Mode name
+   * @param {number} fallbackSize Default IV size
+   * @return {number}
+   */
+  static getModeIVSize (name, fallbackSize) {
+    const mode = BlockCipherEncoder.getMode(name)
+    return mode.ivSize || fallbackSize
   }
 
   /**

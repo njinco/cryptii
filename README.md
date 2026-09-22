@@ -52,7 +52,7 @@ Chain objects serve as containers for UTF-8 text or binary content exchanged bet
 | [`baudot-code`](https://cryptii.com/pipes/baudot-code) | Encoding | [Baudot code](https://en.wikipedia.org/wiki/Baudot_code) |
 | [`bifid-cipher`](https://cryptii.com/pipes/bifid-cipher) | Polybius square | [Bifid cipher](https://en.wikipedia.org/wiki/Bifid_cipher) |
 | [`bitwise-operation`](https://cryptii.com/pipes/bitwise-calculator) | Transform | [Bitwise operations](https://en.wikipedia.org/wiki/Bitwise_operation) (NOT, AND, OR, …) |
-| [`block-cipher`](https://cryptii.com/pipes/aes-encryption) | Modern cryptography | [Block ciphers](https://en.wikipedia.org/wiki/Block_cipher) incl. [AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) |
+| [`block-cipher`](https://cryptii.com/pipes/aes-encryption) | Modern cryptography | [Block ciphers](https://en.wikipedia.org/wiki/Block_cipher) incl. AES-CBC, AES-CTR, and authenticated AES-GCM |
 | [`bootstring`](https://cryptii.com/pipes/bootstring) | Encoding | [Bootstring](https://tools.ietf.org/html/rfc3492) |
 | [`bytes`](https://cryptii.com/pipes/text-to-binary) | View | Viewing and editing bytes |
 | [`caesar-cipher`](https://cryptii.com/pipes/caesar-cipher) | Ciphers | [Caesar cipher](https://en.wikipedia.org/wiki/Caesar_cipher) |
