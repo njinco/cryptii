@@ -236,6 +236,7 @@ export default class PipeView extends View {
   _createCollapsedPart (bricks) {
     return View.createElement('button', {
       className: 'pipe__part-collapsed',
+      ariaLabel: `Show ${bricks.length} hidden brick${bricks.length === 1 ? '' : 's'}`,
       onClick: evt => {
         this.getModel().viewHiddenBrickGroupDidClick(this, bricks)
         evt.preventDefault()

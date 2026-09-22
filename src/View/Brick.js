@@ -66,6 +66,7 @@ export default class BrickView extends View {
 
     const $menuButton = View.createElement('button', {
       className: 'brick__btn-menu',
+      ariaLabel: 'Open brick menu',
       onClick: evt => {
         evt.preventDefault()
         this.toggleMenu()

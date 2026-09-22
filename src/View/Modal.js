@@ -279,6 +279,7 @@ export default class ModalView extends View {
   renderHeader () {
     const $closeButton = View.createElement('button', {
       className: 'modal__btn-close',
+      ariaLabel: 'Close dialog',
       onClick: evt => {
         evt.preventDefault()
         this.cancel()
