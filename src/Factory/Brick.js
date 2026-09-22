@@ -29,6 +29,7 @@ import NumeralSystemEncoder from '../Encoder/NumeralSystem.js'
 import PunchedTapeViewer from '../Viewer/PunchedTape.js'
 import PolybiusSquareEncoder from '../Encoder/PolybiusSquare.js'
 import PunycodeEncoder from '../Encoder/Punycode.js'
+import PlayfairCipherEncoder from '../Encoder/PlayfairCipher.js'
 import RailFenceCipherEncoder from '../Encoder/RailFenceCipher.js'
 import RC4Encoder from '../Encoder/RC4.js'
 import ReplaceEncoder from '../Encoder/Replace.js'
@@ -89,6 +90,7 @@ export default class BrickFactory extends Factory {
       ADFGXCipherEncoder,
       BifidCipherEncoder,
       NihilistCipherEncoder,
+      PlayfairCipherEncoder,
       TapCodeEncoder,
       TrifidCipherEncoder,
 

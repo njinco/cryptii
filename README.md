@@ -66,6 +66,7 @@ Chain objects serve as containers for UTF-8 text or binary content exchanged bet
 | [`morse-code`](https://cryptii.com/pipes/morse-code-translator) | Alphabets | [Morse code](https://en.wikipedia.org/wiki/Morse_code) (English) |
 | [`nihilist-cipher`](https://cryptii.com/pipes/nihilist-cipher) | Polybius square | [Nihilist cipher](https://en.wikipedia.org/wiki/Nihilist_cipher) |
 | [`numeral-system`](https://cryptii.com/pipes/roman-numerals) | Transform | Translates numerals between systems |
+| `playfair-cipher` | Ciphers | [Playfair cipher](https://en.wikipedia.org/wiki/Playfair_cipher) with configurable key and filler |
 | [`punched-tape`](https://cryptii.com/pipes/baudot-code) | View | [Punched tape](https://en.wikipedia.org/wiki/Punched_tape) |
 | [`polybius-square`](https://cryptii.com/pipes/polybius-square) | Polybius square | [Polybius square](https://en.wikipedia.org/wiki/Polybius_square) |
 | [`punycode`](https://cryptii.com/pipes/punycode) | Encoding | [Punycode](https://tools.ietf.org/html/rfc3492) |
