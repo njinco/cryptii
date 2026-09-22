@@ -36,6 +36,7 @@ input,
 select,
 textarea {
   color: $c-text;
+  background: $c-field-control-background;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
