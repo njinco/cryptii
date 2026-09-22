@@ -28,6 +28,7 @@ notice; see [LICENSE.txt](LICENSE.txt).
   - No database or server runtime is required; the application runs in the browser.
 - The deployment includes a favicon, web-app manifest, and mobile/social metadata.
 - The app shell can be revisited offline after the site has been opened once; external/API requests are not cached.
+- Vercel applies a restrictive Content Security Policy and standard browser security headers through `vercel.json`.
 - Future enhancement: replace the optional upstream pipe-sharing service with self-hosted or client-only sharing.
 - [Contribute to the project](CONTRIBUTING.md) or [report an issue](https://github.com/cryptii/cryptii/issues/new/choose)
 
