@@ -6,7 +6,7 @@ describe('LocalPipeTransfer', () => {
   const pipe = { items: [{ name: 'text' }], content: { data: 'hello' } }
 
   it('exports a portable pipe document', () => {
-    assert.strictEqual(exportPipe(pipe).$schema, 'https://cryptii.com/schemas/pipe.json')
+    assert.strictEqual(exportPipe(pipe).$schema, 'https://cryptii.enkiel.org/schemas/pipe.json')
     assert.deepStrictEqual(exportPipe(pipe).items, pipe.items)
   })
 

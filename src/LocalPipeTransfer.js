@@ -1,4 +1,4 @@
-const pipeSchema = 'https://cryptii.com/schemas/pipe.json'
+const pipeSchema = 'https://cryptii.enkiel.org/schemas/pipe.json'
 
 /**
  * Creates a portable, client-only pipe document.

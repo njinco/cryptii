@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cryptii.enkiel.org/schemas/brick.json",
+  "title": "cryptii self-hosted brick",
+  "type": "object",
+  "required": ["name"],
+  "additionalProperties": false,
+  "properties": {
+    "name": { "type": "string" },
+    "title": { "type": "string" },
+    "reverse": { "type": "boolean", "default": false },
+    "hidden": { "type": "boolean", "default": false },
+    "settings": { "type": "object", "additionalProperties": true }
+  }
+}

@@ -11,7 +11,9 @@ const requiredFiles = [
   'site.css',
   'sw.js',
   'site.webmanifest',
-  'favicon.svg'
+  'favicon.svg',
+  'schemas/pipe.json',
+  'schemas/brick.json'
 ]
 
 requiredFiles.forEach(file => assert(existsSync(resolve(dist, file)), `Missing dist/${file}`))
