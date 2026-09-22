@@ -32,11 +32,14 @@ notice; see [LICENSE.txt](LICENSE.txt).
 - Production deployment: [cryptii.enkiel.org](https://cryptii.enkiel.org/)
 - The deployment includes a favicon, web-app manifest, and mobile/social metadata.
 - The interface uses a permanent dark terminal theme with calming green interactive accents.
+- Pipes can be exported to and imported from local `cryptii-pipe.json` files without a server.
+- A privacy page is available at [`/privacy`](https://cryptii.enkiel.org/privacy); unknown routes use a custom 404 page.
 - The app shell can be revisited offline after the site has been opened once; external/API requests are not cached.
 - Pipe sharing is disabled in this self-hosted fork while the optional sharing service is being reconsidered.
 - Vercel applies a restrictive Content Security Policy and standard browser security headers through `vercel.json`.
 - Backburner: replace the optional upstream pipe-sharing service with self-hosted or client-only sharing.
 - [Contribute to the project](CONTRIBUTING.md) or [report an issue](https://github.com/njinco/cryptii/issues/new/choose)
+- See the [fork release notes](CHANGELOG.md) for self-hosted changes.
 
 ## Concept
 

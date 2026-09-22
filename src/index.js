@@ -1,9 +1,11 @@
 import '../style/index.scss'
 import App from './App.js'
 import EnvUtil from './EnvUtil.js'
+import { exportPipe, importPipe } from './LocalPipeTransfer.js'
 
 export { App }
 export { EnvUtil }
+export { exportPipe, importPipe }
 
 export { default as ArrayUtil } from './ArrayUtil'
 export { default as Brick } from './Brick'
@@ -45,8 +47,40 @@ if (EnvUtil.isBrowser() &&
     const config = $config !== null ? JSON.parse($config.innerHTML) : {}
 
     // Configure app and bootstrap it
+    const storedPipe = window.sessionStorage.getItem('cryptii-imported-pipe')
+    if (storedPipe !== null) window.sessionStorage.removeItem('cryptii-imported-pipe')
+
     const app = new App(config)
-    app.run(pipeData)
+    app.run(storedPipe === null ? pipeData : importPipe(storedPipe))
+
+    const exportButton = document.querySelector('[data-pipe-export]')
+    const importInput = document.querySelector('[data-pipe-import]')
+
+    exportButton.addEventListener('click', () => {
+      const documentData = exportPipe(app.getPipe().serialize())
+      const blob = new Blob([JSON.stringify(documentData, null, 2)], {
+        type: 'application/json'
+      })
+      const link = document.createElement('a')
+      link.href = URL.createObjectURL(blob)
+      link.download = 'cryptii-pipe.json'
+      link.click()
+      URL.revokeObjectURL(link.href)
+    })
+
+    importInput.addEventListener('change', async () => {
+      const file = importInput.files[0]
+      if (file === undefined) return
+
+      try {
+        const pipe = importPipe(await file.text())
+        window.sessionStorage.setItem('cryptii-imported-pipe', JSON.stringify(pipe))
+        window.location.reload()
+      } catch (error) {
+        window.alert(error.message)
+        importInput.value = ''
+      }
+    })
   }
 
   // Trigger initialization when the DOM is ready

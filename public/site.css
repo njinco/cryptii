@@ -1,0 +1,21 @@
+:root {
+  color-scheme: dark;
+  background: #050805;
+  color: #b9d8be;
+  font-family: sans-serif;
+}
+
+body {
+  box-sizing: border-box;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 64px 24px;
+  background: #050805;
+}
+
+h1 { color: #b8efc1; font-size: 2rem; }
+h2 { color: #78e08f; font-size: 1.1rem; margin-top: 2rem; }
+p, li { line-height: 1.7; }
+a { color: #78e08f; }
+.brand { color: #55c878; font-weight: 700; letter-spacing: .08em; }
+.card { border: 1px solid #27422d; background: #0d130e; padding: 24px; }

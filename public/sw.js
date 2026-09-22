@@ -1,7 +1,7 @@
 /* global caches, self */
 
-const cacheName = 'cryptii-shell-v1'
-const appShell = ['/', '/favicon.svg', '/site.webmanifest']
+const cacheName = 'cryptii-shell-v2'
+const appShell = ['/', '/favicon.svg', '/site.webmanifest', '/site.css', '/offline.html']
 
 self.addEventListener('install', event => {
   event.waitUntil(
@@ -39,7 +39,7 @@ self.addEventListener('fetch', event => {
           caches.open(cacheName).then(cache => cache.put('/', copy))
           return response
         })
-        .catch(() => caches.match('/'))
+        .catch(() => caches.match('/').then(response => response || caches.match('/offline.html')))
     )
     return
   }

@@ -17,6 +17,8 @@
     "dev": "vite",
     "test": "standard && mocha \"test/**/*.js\"",
     "build": "vite build",
+    "test:a11y": "npm run build && node scripts/accessibility-smoke.mjs",
+    "test:deployment": "npm run build && node scripts/deployment-smoke.mjs",
     "preview": "vite preview"
   },
   "devDependencies": {
