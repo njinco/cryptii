@@ -49,6 +49,7 @@ Chain objects serve as containers for UTF-8 text or binary content exchanged bet
 | [`bacon-cipher`](https://cryptii.com/pipes/bacon-cipher) | Ciphers | [Bacon's cipher](https://en.wikipedia.org/wiki/Bacon%27s_cipher) |
 | [`base32`](https://cryptii.com/pipes/base32) | Encoding | [Base32](https://en.wikipedia.org/wiki/Base32) incl. variants base32hex, z-base-32, … |
 | [`base64`](https://cryptii.com/pipes/text-to-base64) | Encoding | [Base64](https://en.wikipedia.org/wiki/Base64) incl. variants base64url, … |
+| `base58` | Encoding | Compact [Base58](https://en.wikipedia.org/wiki/Base58) encoding using the Bitcoin alphabet |
 | [`baudot-code`](https://cryptii.com/pipes/baudot-code) | Encoding | [Baudot code](https://en.wikipedia.org/wiki/Baudot_code) |
 | [`bifid-cipher`](https://cryptii.com/pipes/bifid-cipher) | Polybius square | [Bifid cipher](https://en.wikipedia.org/wiki/Bifid_cipher) |
 | [`bitwise-operation`](https://cryptii.com/pipes/bitwise-calculator) | Transform | [Bitwise operations](https://en.wikipedia.org/wiki/Bitwise_operation) (NOT, AND, OR, …) |
