@@ -1,4 +1,6 @@
 
+@use 'sass:map';
+
 @mixin each-breakpoint($key: null) {
   @each $_name, $_breakpoint in $breakpoints {
     // Cache global vars to restore them later
@@ -18,7 +20,7 @@
 
     // Set value var if requested
     @if $key != null {
-      $value: map-get($_breakpoint, $key) !global;
+      $value: map.get($_breakpoint, $key) !global;
     } @else {
       $value: null !global;
     }
