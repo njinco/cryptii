@@ -20,6 +20,7 @@ import CaseTransformEncoder from '../Encoder/CaseTransform.js'
 import EnigmaEncoder from '../Encoder/Enigma.js'
 import HashEncoder from '../Encoder/Hash.js'
 import HMACEncoder from '../Encoder/HMAC.js'
+import HexEncoder from '../Encoder/Hex.js'
 import IntegerEncoder from '../Encoder/Integer.js'
 import MorseCodeEncoder from '../Encoder/MorseCode.js'
 import NihilistCipherEncoder from '../Encoder/NihilistCipher.js'
@@ -99,6 +100,7 @@ export default class BrickFactory extends Factory {
       URLEncoder,
       PunycodeEncoder,
       BootstringEncoder,
+      HexEncoder,
       IntegerEncoder,
 
       // Modern cryptography

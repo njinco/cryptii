@@ -60,6 +60,7 @@ Chain objects serve as containers for UTF-8 text or binary content exchanged bet
 | [`enigma`](https://cryptii.com/pipes/enigma-machine) | Ciphers | [Enigma machine](https://en.wikipedia.org/wiki/Enigma_machine) incl. 13 models |
 | [`hash`](https://cryptii.com/pipes/hash-function) | Modern cryptography | Creating a [message digest](https://en.wikipedia.org/wiki/Cryptographic_hash_function) |
 | [`hmac`](https://cryptii.com/pipes/hmac) | Modern cryptography | Creating a [Hash-based message authentication code](https://en.wikipedia.org/wiki/Hash-based_message_authentication_code) |
+| `hex` | Encoding | Hexadecimal byte encoding with lowercase or uppercase output |
 | [`integer`](https://cryptii.com/pipes/integer-encoder) | Encoding | Translates between bytes and [integers](https://en.wikipedia.org/wiki/Integer_(computer_science)) |
 | [`morse-code`](https://cryptii.com/pipes/morse-code-translator) | Alphabets | [Morse code](https://en.wikipedia.org/wiki/Morse_code) (English) |
 | [`nihilist-cipher`](https://cryptii.com/pipes/nihilist-cipher) | Polybius square | [Nihilist cipher](https://en.wikipedia.org/wiki/Nihilist_cipher) |
