@@ -12,6 +12,7 @@ import Viewable from './Viewable.js'
 const defaultConfig = {
   version: 'unknown',
   scope: '/',
+  sharingEnabled: false,
   serviceEndpoint: 'https://cryptii.com/api',
   serviceWorkerUrl: null
 }
@@ -39,7 +40,9 @@ export default class App extends Viewable {
     this._config = Object.assign(defaultConfig, localConfig)
 
     // Configure service instance
-    this._service = new Service(this._config.serviceEndpoint)
+    this._service = this._config.sharingEnabled
+      ? new Service(this._config.serviceEndpoint)
+      : null
 
     // Keep a reference to this instance
     instance = this

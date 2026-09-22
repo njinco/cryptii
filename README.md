@@ -15,8 +15,8 @@ notice; see [LICENSE.txt](LICENSE.txt).
 ## Getting started
 
 - Use the [live version](https://cryptii.com)
-- Download the [latest stable release](https://github.com/cryptii/cryptii/releases/latest) or [other releases](https://github.com/cryptii/cryptii/releases)
-- Clone the repository: `git clone git@github.com:cryptii/cryptii.git`
+- Download the [latest stable release](https://github.com/njinco/cryptii/releases/latest) or [other releases](https://github.com/njinco/cryptii/releases)
+- Clone the repository: `git clone git@github.com:njinco/cryptii.git`
 - Build project locally:
   - Ensure you have Node.js of version specified in `.nvmrc` installed.
   - Install dependencies: `npm install`
@@ -28,9 +28,10 @@ notice; see [LICENSE.txt](LICENSE.txt).
   - No database or server runtime is required; the application runs in the browser.
 - The deployment includes a favicon, web-app manifest, and mobile/social metadata.
 - The app shell can be revisited offline after the site has been opened once; external/API requests are not cached.
+- Pipe sharing is disabled in this self-hosted fork while the optional sharing service is being reconsidered.
 - Vercel applies a restrictive Content Security Policy and standard browser security headers through `vercel.json`.
 - Future enhancement: replace the optional upstream pipe-sharing service with self-hosted or client-only sharing.
-- [Contribute to the project](CONTRIBUTING.md) or [report an issue](https://github.com/cryptii/cryptii/issues/new/choose)
+- [Contribute to the project](CONTRIBUTING.md) or [report an issue](https://github.com/njinco/cryptii/issues/new/choose)
 
 ## Concept
 

@@ -6,10 +6,10 @@
   "author": "Fränz Friederes",
   "repository": {
     "type": "git",
-    "url": "https://github.com/cryptii/cryptii.git"
+    "url": "https://github.com/njinco/cryptii.git"
   },
   "bugs": {
-    "url": "https://github.com/cryptii/cryptii/issues"
+    "url": "https://github.com/njinco/cryptii/issues"
   },
   "homepage": "https://cryptii.com/",
   "license": "MIT",

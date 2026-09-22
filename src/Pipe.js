@@ -992,6 +992,9 @@ export default class Pipe extends Viewable {
    * @return {string} Pipe URL
    */
   async store () {
+    if (this.getService() === null) {
+      throw new Error('Pipe sharing is disabled in this self-hosted deployment.')
+    }
     const data = await this.getService().storePipe(this)
     return data.url
   }
