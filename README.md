@@ -1,9 +1,16 @@
-# cryptii
+# cryptii — self-hosted fork
 
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![MIT license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.txt)
 
-A web app for modular conversion, encoding, and encryption, all performed directly in your browser with no server interaction — [cryptii.com](https://cryptii.com)
+This is a self-hosted fork of [cryptii](https://github.com/cryptii/cryptii), a web app for modular conversion,
+encoding, and encryption. It runs directly in the browser and is intended to be deployed independently, including on
+Vercel.
+
+The original project was created by [Fränz Friederes](https://github.com/wierk) and contributors at
+[Wierk](https://wierk.lu/). Please see the [upstream repository](https://github.com/cryptii/cryptii) and
+[cryptii.com](https://cryptii.com) for the original project. This fork retains the original MIT license and copyright
+notice; see [LICENSE.txt](LICENSE.txt).
 
 ## Getting started
 
@@ -15,6 +22,11 @@ A web app for modular conversion, encoding, and encryption, all performed direct
   - Install dependencies: `npm install`
   - Run build tasks: `npm run build`
   - Run build tasks on file change: `npm run dev`
+- Deploy to Vercel:
+  - Import this repository into Vercel.
+  - Vercel uses `npm run build` and publishes the `dist` directory via `vercel.json`.
+  - No database or server runtime is required; the application runs in the browser.
+- Future enhancement: replace the optional upstream pipe-sharing service with self-hosted or client-only sharing.
 - [Contribute to the project](CONTRIBUTING.md) or [report an issue](https://github.com/cryptii/cryptii/issues/new/choose)
 
 ## Concept
