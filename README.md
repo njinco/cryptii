@@ -27,6 +27,7 @@ notice; see [LICENSE.txt](LICENSE.txt).
   - Vercel uses `npm run build` and publishes the `dist` directory via `vercel.json`.
   - No database or server runtime is required; the application runs in the browser.
 - The deployment includes a favicon, web-app manifest, and mobile/social metadata.
+- The interface uses a permanent dark terminal-inspired theme with cyan interactive accents.
 - The app shell can be revisited offline after the site has been opened once; external/API requests are not cached.
 - Pipe sharing is disabled in this self-hosted fork while the optional sharing service is being reconsidered.
 - Vercel applies a restrictive Content Security Policy and standard browser security headers through `vercel.json`.

@@ -5,17 +5,17 @@
 %s-sheet {
   box-shadow: 0 1px 3px 0 rgba($c-black, 0.14);
   border-radius: $default-border-radius;
-  background: $c-white;
+  background: $c-surface;
 }
 
 %s-sheet-menu {
   box-shadow: 0 4px 12px 1px rgba($c-black, 0.14);
   border-radius: 3px;
-  background: $c-white;
+  background: $c-surface;
 }
 
 %s-sheet-dialog {
   box-shadow: 0 1px 3px 0 rgba($c-black, 0.14);
   border-radius: 4px;
-  background: $c-white;
+  background: $c-surface;
 }
