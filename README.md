@@ -3,9 +3,12 @@
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![MIT license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.txt)
 
-This is a self-hosted fork of [cryptii](https://github.com/cryptii/cryptii), a web app for modular conversion,
-encoding, and encryption. It runs directly in the browser and is intended to be deployed independently, including on
-Vercel.
+This is a personal self-hosted fork of [cryptii](https://github.com/cryptii/cryptii), maintained for private,
+browser-based conversion, encoding, and encryption. The live deployment is available at
+[cryptii.enkiel.org](https://cryptii.enkiel.org/).
+
+The application runs in the browser by default, uses no database, and is configured for independent deployment on
+Vercel. Sharing is intentionally disabled until a self-hosted or client-only approach is available.
 
 The original project was created by [Fränz Friederes](https://github.com/wierk) and contributors at
 [Wierk](https://wierk.lu/). Please see the [upstream repository](https://github.com/cryptii/cryptii) and
@@ -14,7 +17,7 @@ notice; see [LICENSE.txt](LICENSE.txt).
 
 ## Getting started
 
-- Use the [live version](https://cryptii.com)
+- Use the [live version](https://cryptii.enkiel.org/)
 - Download the [latest stable release](https://github.com/njinco/cryptii/releases/latest) or [other releases](https://github.com/njinco/cryptii/releases)
 - Clone the repository: `git clone git@github.com:njinco/cryptii.git`
 - Build project locally:
@@ -26,12 +29,13 @@ notice; see [LICENSE.txt](LICENSE.txt).
   - Import this repository into Vercel.
   - Vercel uses `npm run build` and publishes the `dist` directory via `vercel.json`.
   - No database or server runtime is required; the application runs in the browser.
+- Production deployment: [cryptii.enkiel.org](https://cryptii.enkiel.org/)
 - The deployment includes a favicon, web-app manifest, and mobile/social metadata.
 - The interface uses a permanent dark terminal theme with calming green interactive accents.
 - The app shell can be revisited offline after the site has been opened once; external/API requests are not cached.
 - Pipe sharing is disabled in this self-hosted fork while the optional sharing service is being reconsidered.
 - Vercel applies a restrictive Content Security Policy and standard browser security headers through `vercel.json`.
-- Future enhancement: replace the optional upstream pipe-sharing service with self-hosted or client-only sharing.
+- Backburner: replace the optional upstream pipe-sharing service with self-hosted or client-only sharing.
 - [Contribute to the project](CONTRIBUTING.md) or [report an issue](https://github.com/njinco/cryptii/issues/new/choose)
 
 ## Concept
@@ -46,49 +50,49 @@ Chain objects serve as containers for UTF-8 text or binary content exchanged bet
 
 | Name | Category | Description |
 | ---- | -------- | ----------- |
-| [`a1z26`](https://cryptii.com/pipes/a1z26-cipher) | Ciphers | Number to letter encoder (A1Z26) |
-| [`adfgx-cipher`](https://cryptii.com/pipes/adfgvx-cipher) | Polybius square | [ADFGX cipher](https://en.wikipedia.org/wiki/ADFGVX_cipher) |
-| [`affine-cipher`](https://cryptii.com/pipes/affine-cipher) | Ciphers | [Affine Cipher](https://en.wikipedia.org/wiki/Affine_cipher) |
-| [`alphabetical-substitution`](https://cryptii.com/pipes/alphabetical-substitution) | Ciphers | [Alphabetical substitution](https://en.wikipedia.org/wiki/Substitution_cipher#Simple_substitution) |
-| [`ascii85`](https://cryptii.com/pipes/ascii85-encoding) | Encoding | [Ascii85 / Base85](https://en.wikipedia.org/wiki/Ascii85) incl. variant [Z85](https://rfc.zeromq.org/spec:32/Z85/) |
-| [`bacon-cipher`](https://cryptii.com/pipes/bacon-cipher) | Ciphers | [Bacon's cipher](https://en.wikipedia.org/wiki/Bacon%27s_cipher) |
-| [`base32`](https://cryptii.com/pipes/base32) | Encoding | [Base32](https://en.wikipedia.org/wiki/Base32) incl. variants base32hex, z-base-32, … |
+| [`a1z26`](https://cryptii.enkiel.org/pipes/a1z26-cipher) | Ciphers | Number to letter encoder (A1Z26) |
+| [`adfgx-cipher`](https://cryptii.enkiel.org/pipes/adfgvx-cipher) | Polybius square | [ADFGX cipher](https://en.wikipedia.org/wiki/ADFGVX_cipher) |
+| [`affine-cipher`](https://cryptii.enkiel.org/pipes/affine-cipher) | Ciphers | [Affine Cipher](https://en.wikipedia.org/wiki/Affine_cipher) |
+| [`alphabetical-substitution`](https://cryptii.enkiel.org/pipes/alphabetical-substitution) | Ciphers | [Alphabetical substitution](https://en.wikipedia.org/wiki/Substitution_cipher#Simple_substitution) |
+| [`ascii85`](https://cryptii.enkiel.org/pipes/ascii85-encoding) | Encoding | [Ascii85 / Base85](https://en.wikipedia.org/wiki/Ascii85) incl. variant [Z85](https://rfc.zeromq.org/spec:32/Z85/) |
+| [`bacon-cipher`](https://cryptii.enkiel.org/pipes/bacon-cipher) | Ciphers | [Bacon's cipher](https://en.wikipedia.org/wiki/Bacon%27s_cipher) |
+| [`base32`](https://cryptii.enkiel.org/pipes/base32) | Encoding | [Base32](https://en.wikipedia.org/wiki/Base32) incl. variants base32hex, z-base-32, … |
 | `base45` | Encoding | [Base45](https://www.rfc-editor.org/rfc/rfc9285) encoding for compact QR-oriented payloads |
-| [`base64`](https://cryptii.com/pipes/text-to-base64) | Encoding | [Base64](https://en.wikipedia.org/wiki/Base64) incl. variants base64url, … |
+| [`base64`](https://cryptii.enkiel.org/pipes/text-to-base64) | Encoding | [Base64](https://en.wikipedia.org/wiki/Base64) incl. variants base64url, … |
 | `base58` | Encoding | Compact [Base58](https://en.wikipedia.org/wiki/Base58) encoding using the Bitcoin alphabet |
-| [`baudot-code`](https://cryptii.com/pipes/baudot-code) | Encoding | [Baudot code](https://en.wikipedia.org/wiki/Baudot_code) |
-| [`bifid-cipher`](https://cryptii.com/pipes/bifid-cipher) | Polybius square | [Bifid cipher](https://en.wikipedia.org/wiki/Bifid_cipher) |
-| [`bitwise-operation`](https://cryptii.com/pipes/bitwise-calculator) | Transform | [Bitwise operations](https://en.wikipedia.org/wiki/Bitwise_operation) (NOT, AND, OR, …) |
-| [`block-cipher`](https://cryptii.com/pipes/aes-encryption) | Modern cryptography | [Block ciphers](https://en.wikipedia.org/wiki/Block_cipher) incl. AES-CBC, AES-CTR, and authenticated AES-GCM |
-| [`bootstring`](https://cryptii.com/pipes/bootstring) | Encoding | [Bootstring](https://tools.ietf.org/html/rfc3492) |
-| [`bytes`](https://cryptii.com/pipes/text-to-binary) | View | Viewing and editing bytes |
-| [`caesar-cipher`](https://cryptii.com/pipes/caesar-cipher) | Ciphers | [Caesar cipher](https://en.wikipedia.org/wiki/Caesar_cipher) |
-| [`case-transform`](https://cryptii.com/pipes/convert-case) | Transform | Transforms to upper case, lower case, … |
+| [`baudot-code`](https://cryptii.enkiel.org/pipes/baudot-code) | Encoding | [Baudot code](https://en.wikipedia.org/wiki/Baudot_code) |
+| [`bifid-cipher`](https://cryptii.enkiel.org/pipes/bifid-cipher) | Polybius square | [Bifid cipher](https://en.wikipedia.org/wiki/Bifid_cipher) |
+| [`bitwise-operation`](https://cryptii.enkiel.org/pipes/bitwise-calculator) | Transform | [Bitwise operations](https://en.wikipedia.org/wiki/Bitwise_operation) (NOT, AND, OR, …) |
+| [`block-cipher`](https://cryptii.enkiel.org/pipes/aes-encryption) | Modern cryptography | [Block ciphers](https://en.wikipedia.org/wiki/Block_cipher) incl. AES-CBC, AES-CTR, and authenticated AES-GCM |
+| [`bootstring`](https://cryptii.enkiel.org/pipes/bootstring) | Encoding | [Bootstring](https://tools.ietf.org/html/rfc3492) |
+| [`bytes`](https://cryptii.enkiel.org/pipes/text-to-binary) | View | Viewing and editing bytes |
+| [`caesar-cipher`](https://cryptii.enkiel.org/pipes/caesar-cipher) | Ciphers | [Caesar cipher](https://en.wikipedia.org/wiki/Caesar_cipher) |
+| [`case-transform`](https://cryptii.enkiel.org/pipes/convert-case) | Transform | Transforms to upper case, lower case, … |
 | `columnar-transposition-cipher` | Ciphers | [Columnar transposition cipher](https://en.wikipedia.org/wiki/Transposition_cipher) with keyed column ordering |
-| [`enigma`](https://cryptii.com/pipes/enigma-machine) | Ciphers | [Enigma machine](https://en.wikipedia.org/wiki/Enigma_machine) incl. 13 models |
-| [`hash`](https://cryptii.com/pipes/hash-function) | Modern cryptography | Creating message digests including SHA-3 and BLAKE2s |
-| [`hmac`](https://cryptii.com/pipes/hmac) | Modern cryptography | Creating a [Hash-based message authentication code](https://en.wikipedia.org/wiki/Hash-based_message_authentication_code) |
+| [`enigma`](https://cryptii.enkiel.org/pipes/enigma-machine) | Ciphers | [Enigma machine](https://en.wikipedia.org/wiki/Enigma_machine) incl. 13 models |
+| [`hash`](https://cryptii.enkiel.org/pipes/hash-function) | Modern cryptography | Creating message digests including SHA-3 and BLAKE2s |
+| [`hmac`](https://cryptii.enkiel.org/pipes/hmac) | Modern cryptography | Creating a [Hash-based message authentication code](https://en.wikipedia.org/wiki/Hash-based_message_authentication_code) |
 | `hex` | Encoding | Hexadecimal byte encoding with lowercase or uppercase output |
-| [`integer`](https://cryptii.com/pipes/integer-encoder) | Encoding | Translates between bytes and [integers](https://en.wikipedia.org/wiki/Integer_(computer_science)) |
-| [`morse-code`](https://cryptii.com/pipes/morse-code-translator) | Alphabets | [Morse code](https://en.wikipedia.org/wiki/Morse_code) (English) |
-| [`nihilist-cipher`](https://cryptii.com/pipes/nihilist-cipher) | Polybius square | [Nihilist cipher](https://en.wikipedia.org/wiki/Nihilist_cipher) |
-| [`numeral-system`](https://cryptii.com/pipes/roman-numerals) | Transform | Translates numerals between systems |
+| [`integer`](https://cryptii.enkiel.org/pipes/integer-encoder) | Encoding | Translates between bytes and [integers](https://en.wikipedia.org/wiki/Integer_(computer_science)) |
+| [`morse-code`](https://cryptii.enkiel.org/pipes/morse-code-translator) | Alphabets | [Morse code](https://en.wikipedia.org/wiki/Morse_code) (English) |
+| [`nihilist-cipher`](https://cryptii.enkiel.org/pipes/nihilist-cipher) | Polybius square | [Nihilist cipher](https://en.wikipedia.org/wiki/Nihilist_cipher) |
+| [`numeral-system`](https://cryptii.enkiel.org/pipes/roman-numerals) | Transform | Translates numerals between systems |
 | `playfair-cipher` | Ciphers | [Playfair cipher](https://en.wikipedia.org/wiki/Playfair_cipher) with configurable key and filler |
-| [`punched-tape`](https://cryptii.com/pipes/baudot-code) | View | [Punched tape](https://en.wikipedia.org/wiki/Punched_tape) |
-| [`polybius-square`](https://cryptii.com/pipes/polybius-square) | Polybius square | [Polybius square](https://en.wikipedia.org/wiki/Polybius_square) |
-| [`punycode`](https://cryptii.com/pipes/punycode) | Encoding | [Punycode](https://tools.ietf.org/html/rfc3492) |
-| [`rail-fence-cipher`](https://cryptii.com/pipes/rail-fence-cipher) | Ciphers | [Rail fence cipher](https://en.wikipedia.org/wiki/Rail_fence_cipher) |
-| [`rc4`](https://cryptii.com/pipes/rc4-encryption) | Modern cryptography | [RC4](https://en.wikipedia.org/wiki/RC4) incl. RC4-drop |
+| [`punched-tape`](https://cryptii.enkiel.org/pipes/baudot-code) | View | [Punched tape](https://en.wikipedia.org/wiki/Punched_tape) |
+| [`polybius-square`](https://cryptii.enkiel.org/pipes/polybius-square) | Polybius square | [Polybius square](https://en.wikipedia.org/wiki/Polybius_square) |
+| [`punycode`](https://cryptii.enkiel.org/pipes/punycode) | Encoding | [Punycode](https://tools.ietf.org/html/rfc3492) |
+| [`rail-fence-cipher`](https://cryptii.enkiel.org/pipes/rail-fence-cipher) | Ciphers | [Rail fence cipher](https://en.wikipedia.org/wiki/Rail_fence_cipher) |
+| [`rc4`](https://cryptii.enkiel.org/pipes/rc4-encryption) | Modern cryptography | [RC4](https://en.wikipedia.org/wiki/RC4) incl. RC4-drop |
 | `replace` | Transform | Finds and replaces a given text |
-| [`reverse`](https://cryptii.com/pipes/reverse-text) | Transform | Reverses the order of bytes, characters or lines |
-| [`rot13`](https://cryptii.com/pipes/rot13) | Ciphers | [ROT13](https://en.wikipedia.org/wiki/ROT13) incl. variants ROT5, ROT18 & ROT47 |
-| [`spelling-alphabet`](https://cryptii.com/pipes/nato-phonetic-alphabet) | Alphabets | Several [spelling alphabets](https://en.wikipedia.org/wiki/Spelling_alphabet) |
-| [`tap-code`](https://cryptii.com/pipes/tap-code) | Polybius square | [Tap code](https://en.wikipedia.org/wiki/Tap_code) |
-| [`text`](https://cryptii.com/pipes/text-to-binary) | View | Viewing and editing in plain text |
-| [`trifid-cipher`](https://cryptii.com/pipes/trifid-cipher) | Polybius square | [Trifid cipher](https://en.wikipedia.org/wiki/Trifid_cipher) |
-| [`unicode-code-points`](https://cryptii.com/pipes/unicode-lookup) | Encoding | Encoding to Unicode code points in given format |
-| [`url-encoding`](https://cryptii.com/pipes/urlencode) | Encoding | [URL encoding / Percent-encoding](https://en.wikipedia.org/wiki/Percent-encoding) |
-| [`vigenere-cipher`](https://cryptii.com/pipes/vigenere-cipher) | Ciphers | [Vigenère cipher](https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher) incl. [Beaufort cipher](https://en.wikipedia.org/wiki/Beaufort_cipher) variants |
+| [`reverse`](https://cryptii.enkiel.org/pipes/reverse-text) | Transform | Reverses the order of bytes, characters or lines |
+| [`rot13`](https://cryptii.enkiel.org/pipes/rot13) | Ciphers | [ROT13](https://en.wikipedia.org/wiki/ROT13) incl. variants ROT5, ROT18 & ROT47 |
+| [`spelling-alphabet`](https://cryptii.enkiel.org/pipes/nato-phonetic-alphabet) | Alphabets | Several [spelling alphabets](https://en.wikipedia.org/wiki/Spelling_alphabet) |
+| [`tap-code`](https://cryptii.enkiel.org/pipes/tap-code) | Polybius square | [Tap code](https://en.wikipedia.org/wiki/Tap_code) |
+| [`text`](https://cryptii.enkiel.org/pipes/text-to-binary) | View | Viewing and editing in plain text |
+| [`trifid-cipher`](https://cryptii.enkiel.org/pipes/trifid-cipher) | Polybius square | [Trifid cipher](https://en.wikipedia.org/wiki/Trifid_cipher) |
+| [`unicode-code-points`](https://cryptii.enkiel.org/pipes/unicode-lookup) | Encoding | Encoding to Unicode code points in given format |
+| [`url-encoding`](https://cryptii.enkiel.org/pipes/urlencode) | Encoding | [URL encoding / Percent-encoding](https://en.wikipedia.org/wiki/Percent-encoding) |
+| [`vigenere-cipher`](https://cryptii.enkiel.org/pipes/vigenere-cipher) | Ciphers | [Vigenère cipher](https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher) incl. [Beaufort cipher](https://en.wikipedia.org/wiki/Beaufort_cipher) variants |
 
 ---
 

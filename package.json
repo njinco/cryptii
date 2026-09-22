@@ -11,7 +11,7 @@
   "bugs": {
     "url": "https://github.com/njinco/cryptii/issues"
   },
-  "homepage": "https://cryptii.com/",
+  "homepage": "https://cryptii.enkiel.org/",
   "license": "MIT",
   "scripts": {
     "dev": "vite",
