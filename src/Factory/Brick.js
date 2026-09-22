@@ -18,6 +18,7 @@ import BootstringEncoder from '../Encoder/Bootstring.js'
 import BytesViewer from '../Viewer/Bytes.js'
 import CaesarCipherEncoder from '../Encoder/CaesarCipher.js'
 import CaseTransformEncoder from '../Encoder/CaseTransform.js'
+import ColumnarTranspositionCipherEncoder from '../Encoder/ColumnarTranspositionCipher.js'
 import EnigmaEncoder from '../Encoder/Enigma.js'
 import HashEncoder from '../Encoder/Hash.js'
 import HMACEncoder from '../Encoder/HMAC.js'
@@ -83,6 +84,7 @@ export default class BrickFactory extends Factory {
       VigenereCipherEncoder,
       BaconCipherEncoder,
       AlphabeticalSubstitutionEncoder,
+      ColumnarTranspositionCipherEncoder,
       RailFenceCipherEncoder,
 
       // Polybius square ciphers

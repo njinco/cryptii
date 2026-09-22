@@ -58,6 +58,7 @@ Chain objects serve as containers for UTF-8 text or binary content exchanged bet
 | [`bytes`](https://cryptii.com/pipes/text-to-binary) | View | Viewing and editing bytes |
 | [`caesar-cipher`](https://cryptii.com/pipes/caesar-cipher) | Ciphers | [Caesar cipher](https://en.wikipedia.org/wiki/Caesar_cipher) |
 | [`case-transform`](https://cryptii.com/pipes/convert-case) | Transform | Transforms to upper case, lower case, … |
+| `columnar-transposition-cipher` | Ciphers | [Columnar transposition cipher](https://en.wikipedia.org/wiki/Transposition_cipher) with keyed column ordering |
 | [`enigma`](https://cryptii.com/pipes/enigma-machine) | Ciphers | [Enigma machine](https://en.wikipedia.org/wiki/Enigma_machine) incl. 13 models |
 | [`hash`](https://cryptii.com/pipes/hash-function) | Modern cryptography | Creating a [message digest](https://en.wikipedia.org/wiki/Cryptographic_hash_function) |
 | [`hmac`](https://cryptii.com/pipes/hmac) | Modern cryptography | Creating a [Hash-based message authentication code](https://en.wikipedia.org/wiki/Hash-based_message_authentication_code) |
