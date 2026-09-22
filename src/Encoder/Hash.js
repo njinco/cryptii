@@ -1,6 +1,8 @@
 import EnvUtil from '../EnvUtil.js'
 import Encoder from '../Encoder.js'
 import md5 from './Hash/md5.js'
+import blake2s from './Hash/blake2s.js'
+import sha3 from './Hash/sha3.js'
 import nodeCrypto from 'node:crypto'
 
 const meta = {
@@ -44,6 +46,18 @@ const algorithms = [
     blockSize: 128,
     browserAlgorithm: 'SHA-512',
     nodeAlgorithm: 'sha512'
+  },
+  {
+    name: 'sha3-256',
+    label: 'SHA3-256',
+    blockSize: 136,
+    available: true
+  },
+  {
+    name: 'blake2s-256',
+    label: 'BLAKE2s-256',
+    blockSize: 64,
+    available: true
   }
 ]
 
@@ -102,6 +116,10 @@ export default class HashEncoder extends Encoder {
     switch (name) {
       case 'md5':
         return new Promise(resolve => resolve(md5(message)))
+      case 'sha3-256':
+        return new Promise(resolve => resolve(sha3(message)))
+      case 'blake2s-256':
+        return new Promise(resolve => resolve(blake2s(message)))
     }
 
     if (EnvUtil.isNode()) {

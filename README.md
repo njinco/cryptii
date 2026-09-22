@@ -27,6 +27,7 @@ notice; see [LICENSE.txt](LICENSE.txt).
   - Vercel uses `npm run build` and publishes the `dist` directory via `vercel.json`.
   - No database or server runtime is required; the application runs in the browser.
 - The deployment includes a favicon, web-app manifest, and mobile/social metadata.
+- The app shell can be revisited offline after the site has been opened once; external/API requests are not cached.
 - Future enhancement: replace the optional upstream pipe-sharing service with self-hosted or client-only sharing.
 - [Contribute to the project](CONTRIBUTING.md) or [report an issue](https://github.com/cryptii/cryptii/issues/new/choose)
 
@@ -49,6 +50,7 @@ Chain objects serve as containers for UTF-8 text or binary content exchanged bet
 | [`ascii85`](https://cryptii.com/pipes/ascii85-encoding) | Encoding | [Ascii85 / Base85](https://en.wikipedia.org/wiki/Ascii85) incl. variant [Z85](https://rfc.zeromq.org/spec:32/Z85/) |
 | [`bacon-cipher`](https://cryptii.com/pipes/bacon-cipher) | Ciphers | [Bacon's cipher](https://en.wikipedia.org/wiki/Bacon%27s_cipher) |
 | [`base32`](https://cryptii.com/pipes/base32) | Encoding | [Base32](https://en.wikipedia.org/wiki/Base32) incl. variants base32hex, z-base-32, … |
+| `base45` | Encoding | [Base45](https://www.rfc-editor.org/rfc/rfc9285) encoding for compact QR-oriented payloads |
 | [`base64`](https://cryptii.com/pipes/text-to-base64) | Encoding | [Base64](https://en.wikipedia.org/wiki/Base64) incl. variants base64url, … |
 | `base58` | Encoding | Compact [Base58](https://en.wikipedia.org/wiki/Base58) encoding using the Bitcoin alphabet |
 | [`baudot-code`](https://cryptii.com/pipes/baudot-code) | Encoding | [Baudot code](https://en.wikipedia.org/wiki/Baudot_code) |
@@ -61,7 +63,7 @@ Chain objects serve as containers for UTF-8 text or binary content exchanged bet
 | [`case-transform`](https://cryptii.com/pipes/convert-case) | Transform | Transforms to upper case, lower case, … |
 | `columnar-transposition-cipher` | Ciphers | [Columnar transposition cipher](https://en.wikipedia.org/wiki/Transposition_cipher) with keyed column ordering |
 | [`enigma`](https://cryptii.com/pipes/enigma-machine) | Ciphers | [Enigma machine](https://en.wikipedia.org/wiki/Enigma_machine) incl. 13 models |
-| [`hash`](https://cryptii.com/pipes/hash-function) | Modern cryptography | Creating a [message digest](https://en.wikipedia.org/wiki/Cryptographic_hash_function) |
+| [`hash`](https://cryptii.com/pipes/hash-function) | Modern cryptography | Creating message digests including SHA-3 and BLAKE2s |
 | [`hmac`](https://cryptii.com/pipes/hmac) | Modern cryptography | Creating a [Hash-based message authentication code](https://en.wikipedia.org/wiki/Hash-based_message_authentication_code) |
 | `hex` | Encoding | Hexadecimal byte encoding with lowercase or uppercase output |
 | [`integer`](https://cryptii.com/pipes/integer-encoder) | Encoding | Translates between bytes and [integers](https://en.wikipedia.org/wiki/Integer_(computer_science)) |

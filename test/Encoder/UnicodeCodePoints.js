@@ -1,7 +1,7 @@
 import { describe } from 'mocha'
 
-import EncoderTester from '../Helper/EncoderTester'
-import UnicodeCodePointsEncoder from '../../src/Encoder/UnicodeCodePoints'
+import EncoderTester from '../Helper/EncoderTester.js'
+import UnicodeCodePointsEncoder from '../../src/Encoder/UnicodeCodePoints.js'
 
 /** @test {UnicodeCodePointsEncoder} */
 describe('UnicodeCodePointsEncoder', () => EncoderTester.test(UnicodeCodePointsEncoder, [

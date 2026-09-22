@@ -8,6 +8,7 @@ import AlphabeticalSubstitutionEncoder from '../Encoder/AlphabeticalSubstitution
 import Ascii85Encoder from '../Encoder/Ascii85.js'
 import BaconCipherEncoder from '../Encoder/BaconCipher.js'
 import Base32Encoder from '../Encoder/Base32.js'
+import Base45Encoder from '../Encoder/Base45.js'
 import Base64Encoder from '../Encoder/Base64.js'
 import Base58Encoder from '../Encoder/Base58.js'
 import BaudotCodeEncoder from '../Encoder/BaudotCode.js'
@@ -98,6 +99,7 @@ export default class BrickFactory extends Factory {
 
       // Encoding
       Base32Encoder,
+      Base45Encoder,
       Base64Encoder,
       Base58Encoder,
       Ascii85Encoder,

@@ -1,7 +1,7 @@
 import { describe } from 'mocha'
 
-import EncoderTester from '../Helper/EncoderTester'
-import RailFenceCipherEncoder from '../../src/Encoder/RailFenceCipher'
+import EncoderTester from '../Helper/EncoderTester.js'
+import RailFenceCipherEncoder from '../../src/Encoder/RailFenceCipher.js'
 
 /** @test {RailFenceCipherEncoder} */
 describe('RailFenceCipherEncoder', () => EncoderTester.test(RailFenceCipherEncoder, [

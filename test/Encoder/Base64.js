@@ -1,7 +1,7 @@
 import { describe } from 'mocha'
 
-import Base64Encoder from '../../src/Encoder/Base64'
-import EncoderTester from '../Helper/EncoderTester'
+import Base64Encoder from '../../src/Encoder/Base64.js'
+import EncoderTester from '../Helper/EncoderTester.js'
 
 /** @test {Base64Encoder} */
 describe('Base64Encoder', () => EncoderTester.test(Base64Encoder, [

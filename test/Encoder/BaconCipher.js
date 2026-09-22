@@ -1,7 +1,7 @@
 import { describe } from 'mocha'
 
-import EncoderTester from '../Helper/EncoderTester'
-import BaconCipherEncoder from '../../src/Encoder/BaconCipher'
+import EncoderTester from '../Helper/EncoderTester.js'
+import BaconCipherEncoder from '../../src/Encoder/BaconCipher.js'
 
 /** @test {BaconCipherEncoder} */
 describe('BaconCipherEncoder', () => EncoderTester.test(BaconCipherEncoder, [

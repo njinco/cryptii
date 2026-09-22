@@ -1,8 +1,8 @@
 import { describe } from 'mocha'
 
-import BaudotCodeEncoder from '../../src/Encoder/BaudotCode'
-import ByteEncoder from '../../src/ByteEncoder'
-import EncoderTester from '../Helper/EncoderTester'
+import BaudotCodeEncoder from '../../src/Encoder/BaudotCode.js'
+import ByteEncoder from '../../src/ByteEncoder.js'
+import EncoderTester from '../Helper/EncoderTester.js'
 
 const bytes = ByteEncoder.bytesFromBinaryString
 

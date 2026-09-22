@@ -1,8 +1,8 @@
 import { describe } from 'mocha'
 
-import Ascii85Encoder from '../../src/Encoder/Ascii85'
-import ByteEncoder from '../../src/ByteEncoder'
-import EncoderTester from '../Helper/EncoderTester'
+import Ascii85Encoder from '../../src/Encoder/Ascii85.js'
+import ByteEncoder from '../../src/ByteEncoder.js'
+import EncoderTester from '../Helper/EncoderTester.js'
 
 const bytes = ByteEncoder.bytesFromHexString
 

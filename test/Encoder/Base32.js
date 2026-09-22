@@ -1,7 +1,7 @@
 import { describe } from 'mocha'
 
-import Base32Encoder from '../../src/Encoder/Base32'
-import EncoderTester from '../Helper/EncoderTester'
+import Base32Encoder from '../../src/Encoder/Base32.js'
+import EncoderTester from '../Helper/EncoderTester.js'
 
 /** @test {Base32Encoder} */
 describe('Base32Encoder', () => EncoderTester.test(Base32Encoder, [

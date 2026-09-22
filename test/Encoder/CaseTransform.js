@@ -1,7 +1,7 @@
 import { describe } from 'mocha'
 
-import EncoderTester from '../Helper/EncoderTester'
-import CaseTransformEncoder from '../../src/Encoder/CaseTransform'
+import EncoderTester from '../Helper/EncoderTester.js'
+import CaseTransformEncoder from '../../src/Encoder/CaseTransform.js'
 
 /** @test {CaseTransformEncoder} */
 describe('CaseTransformEncoder', () => EncoderTester.test(CaseTransformEncoder, [

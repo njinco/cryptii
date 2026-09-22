@@ -1,7 +1,7 @@
 import { describe } from 'mocha'
 
-import EncoderTester from '../Helper/EncoderTester'
-import A1Z26Encoder from '../../src/Encoder/A1Z26'
+import EncoderTester from '../Helper/EncoderTester.js'
+import A1Z26Encoder from '../../src/Encoder/A1Z26.js'
 
 /** @test {A1Z26Encoder} */
 describe('A1Z26Encoder', () => EncoderTester.test(A1Z26Encoder, [

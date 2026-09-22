@@ -1,7 +1,7 @@
 import { describe } from 'mocha'
 
-import EncoderTester from '../Helper/EncoderTester'
-import PolybiusSquareEncoder from '../../src/Encoder/PolybiusSquare'
+import EncoderTester from '../Helper/EncoderTester.js'
+import PolybiusSquareEncoder from '../../src/Encoder/PolybiusSquare.js'
 
 /** @test {PolybiusSquareEncoder} */
 describe('PolybiusSquareEncoder', () => EncoderTester.test(PolybiusSquareEncoder, [

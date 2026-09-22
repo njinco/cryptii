@@ -15,7 +15,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "vite",
-    "test": "standard && mocha",
+    "test": "standard && mocha \"test/**/*.js\"",
     "build": "vite build",
     "preview": "vite preview"
   },

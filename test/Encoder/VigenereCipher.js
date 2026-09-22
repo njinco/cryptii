@@ -1,7 +1,7 @@
 import { describe } from 'mocha'
 
-import EncoderTester from '../Helper/EncoderTester'
-import VigenereCipherEncoder from '../../src/Encoder/VigenereCipher'
+import EncoderTester from '../Helper/EncoderTester.js'
+import VigenereCipherEncoder from '../../src/Encoder/VigenereCipher.js'
 
 /** @test {VigenereCipherEncoder} */
 describe('VigenereCipherEncoder', () => EncoderTester.test(VigenereCipherEncoder, [

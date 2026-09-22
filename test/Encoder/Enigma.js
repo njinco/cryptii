@@ -1,7 +1,7 @@
 import { describe } from 'mocha'
 
-import EncoderTester from '../Helper/EncoderTester'
-import EnigmaEncoder from '../../src/Encoder/Enigma'
+import EncoderTester from '../Helper/EncoderTester.js'
+import EnigmaEncoder from '../../src/Encoder/Enigma.js'
 
 const plaintext =
   'boot klar x bei j schnoor j etwa zwo siben x nov x sechs nul cbm x' +

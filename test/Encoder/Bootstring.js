@@ -1,7 +1,7 @@
 import { describe } from 'mocha'
 
-import BootstringEncoder from '../../src/Encoder/Bootstring'
-import EncoderTester from '../Helper/EncoderTester'
+import BootstringEncoder from '../../src/Encoder/Bootstring.js'
+import EncoderTester from '../Helper/EncoderTester.js'
 
 /** @test {BootstringEncoder} */
 describe('BootstringEncoder', () => EncoderTester.test(BootstringEncoder, [
