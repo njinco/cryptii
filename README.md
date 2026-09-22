@@ -26,6 +26,7 @@ notice; see [LICENSE.txt](LICENSE.txt).
   - Import this repository into Vercel.
   - Vercel uses `npm run build` and publishes the `dist` directory via `vercel.json`.
   - No database or server runtime is required; the application runs in the browser.
+- The deployment includes a favicon, web-app manifest, and mobile/social metadata.
 - Future enhancement: replace the optional upstream pipe-sharing service with self-hosted or client-only sharing.
 - [Contribute to the project](CONTRIBUTING.md) or [report an issue](https://github.com/cryptii/cryptii/issues/new/choose)
 

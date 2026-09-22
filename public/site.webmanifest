@@ -1,0 +1,17 @@
+{
+  "name": "cryptii — self-hosted",
+  "short_name": "cryptii",
+  "description": "A private, browser-based toolkit for modular conversion, encoding, and encryption.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f5f8fb",
+  "theme_color": "#002f6d",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
