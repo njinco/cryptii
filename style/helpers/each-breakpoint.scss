@@ -1,47 +1,14 @@
 
-@use 'sass:map';
-@use 'sass:meta';
 @use '../variables/breakpoints' as *;
 @use 'breakpoint' as *;
 
 @mixin each-breakpoint($key: null) {
   @each $_name, $_breakpoint in $breakpoints {
-    // Cache global vars to restore them later
-    @if meta.variable-exists(name) {
-      $_old-name: $name;
-    }
-    @if meta.variable-exists(breakpoint) {
-      $_old-breakpoint: $breakpoint;
-    }
-    @if meta.variable-exists(value) {
-      $_old-value: $value;
-    }
-
-    // Set name & breakpoint vars
-    $name: $_name !global;
-    $breakpoint: $_breakpoint !global;
-
-    // Set value var if requested
-    @if $key != null {
-      $value: map.get($_breakpoint, $key) !global;
-    } @else {
-      $value: null !global;
-    }
-
+    $name: $_name;
+    $breakpoint: $_breakpoint;
     // Run content inside breakpoint
     @include breakpoint($name) {
       @content;
-    }
-
-    // Restore global vars
-    @if meta.variable-exists(_old-name) {
-      $name: $_old-name !global;
-    }
-    @if meta.variable-exists(_old-breakpoint) {
-      $breakpoint: $_old-breakpoint !global;
-    }
-    @if meta.variable-exists(_old-value) {
-      $value: $_old-value !global;
     }
   }
 }

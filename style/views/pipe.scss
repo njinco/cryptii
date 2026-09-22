@@ -74,10 +74,8 @@ $header-height: 96px !default;
       padding: $pipe-vertical-padding-m 48px;
       min-width: 100%;
 
-      @include each-breakpoint(gutter) {
-        padding-left: $value;
-        padding-right: $value;
-      }
+      @include breakpoint(m) { padding-left: 48px; padding-right: 48px; }
+      @include breakpoint(l) { padding-left: 64px; padding-right: 64px; }
     }
   }
 

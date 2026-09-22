@@ -73,13 +73,10 @@
       transform: none;
     }
 
-    @include each-breakpoint(modal-gutter) {
-      max-width: (520px + $value * 2);
-
-      @if $name != xs {
-        margin-bottom: $value;
-      }
-    }
+    @include breakpoint(xs) { max-width: 552px; }
+    @include breakpoint(s) { max-width: 568px; margin-bottom: 24px; }
+    @include breakpoint(m) { max-width: 584px; margin-bottom: 32px; }
+    @include breakpoint(l) { max-width: 584px; margin-bottom: 32px; }
 
     @include breakpoint(xs) {
       padding-top: 8px;
@@ -109,10 +106,9 @@
     position: relative;
     padding-top: 16px;
     padding-bottom: 16px;
-    @include each-breakpoint(modal-gutter) {
-      padding-left: $value;
-      padding-right: $value;
-    }
+    @include breakpoint(xs) { padding-left: 16px; padding-right: 16px; }
+    @include breakpoint(s) { padding-left: 24px; padding-right: 24px; }
+    @include breakpoint(m, l) { padding-left: 32px; padding-right: 32px; }
     @extend %t-h2;
   }
 
@@ -132,9 +128,9 @@
       color: $c-text;
     }
 
-    @include each-breakpoint(modal-gutter) {
-      padding-right: $value;
-    }
+    @include breakpoint(xs) { padding-right: 16px; }
+    @include breakpoint(s) { padding-right: 24px; }
+    @include breakpoint(m, l) { padding-right: 32px; }
 
     svg {
       width: 16px;
@@ -146,8 +142,8 @@
   &__content {
     background: $c-background-shaded;
 
-    @include each-breakpoint(modal-gutter) {
-      padding: $value;
-    }
+    @include breakpoint(xs) { padding: 16px; }
+    @include breakpoint(s) { padding: 24px; }
+    @include breakpoint(m, l) { padding: 32px; }
   }
 }
